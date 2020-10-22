@@ -1,19 +1,18 @@
-def ft_len(a):
-    b = 0
-    for i in a:
-        b += 1
-    return b
+def ft_len(string):
+    count = 0
+    for _ in string:
+        count += 1
+    return count
 
 
 def ft_remove_str(str1, str2):
-    b = 0
-    a = ''
+    count = 0
+    new_string = str()
+    if str2 not in str1:
+        return False
     for i in str1:
         if i in str2:
-            b += 1
+            count += 1
         else:
-            a += i
-    if ft_len(str1) == b:
-        return False
-    else:
-        return a
+            new_string += i
+    return new_string
