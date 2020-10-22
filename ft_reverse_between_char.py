@@ -1,8 +1,8 @@
 def ft_len(stsr):
-    l = 0
+    q = 0
     for i in stsr:
-        l += 1
-    return l
+        q += 1
+    return q
 
 
 def ft_find_char(char, str):
