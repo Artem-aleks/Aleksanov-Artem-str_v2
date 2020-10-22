@@ -1,8 +1,8 @@
 def ft_len(stsr):
-    m = 0
+    l = 0
     for i in stsr:
-        m += 1
-    return m
+        l += 1
+    return l
 
 
 def ft_remove_str(str1, str2):
