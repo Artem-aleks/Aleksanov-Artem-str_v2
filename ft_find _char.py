@@ -1,13 +1,13 @@
-def ft_len(a):
-    b = 0
-    for _ in a:
-        b += 1
-    return b
+def ft_len(string):
+    count = 0
+    for _ in string:
+        count += 1
+    return count
 
 
-def ft_find_char(char, a):
-    if char not in a:
+def ft_find_char(char, string):
+    if char not in string:
         return False
-    for i in range(ft_len(a)):
-        if a[i] == char:
+    for i in range(ft_len(string)):
+        if string[i] == char:
             return i + 1
