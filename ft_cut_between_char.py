@@ -1,39 +1,50 @@
-def ft_len(a):
-    s = 0
-    for i in a:
-        s += 1
-    return (s)
+def ft_count_char_in_str(d, b):
+    c = 0
+    for i in b:
+        if i == d:
+            c += 1
+    return c
 
 
-def ft_cut_between_char(char, a):
+def ft_len(b):
+    c = 0
+    for _ in b:
+        c += 1
+    return c
+
+
+def ft_find_char(d, b):
+    if d not in b:
+        return False
+    for i in range(ft_len(b)):
+        if b[i] == d:
+            return i + 1
+
+
+def ft_find_second_char(d, b):
     x = 0
-    r = 0
-    w = ''
-    count = 0
-    if char in a:
-        for i in a:
-            if i == char:
-                count += 1
+    if ft_count_char_in_str(d, b) == 1:
+        return -1
+    elif ft_count_char_in_str(d, b) == 0:
+        return False
+    for i in range(ft_len(b)):
+        if b[i] == d:
+            x += 1
+            if x == 2:
+                return i
 
-        if count == 1:
-            return -1
-        else:
-            for i in range(ft_len(a)):
-                if a[i] == char:
-                    x = i
 
-                    break
-            for i in range(ft_len(a)):
-                if a[i] == char:
-                    r = i
-            for i in range(x):
-                w += a[i]
+def ft_slice_str(b, st, sp):
+    r = ''
+    for i in range(st, sp):
+        r += b[i]
+    return r
 
-            r += 1
-            while r < ft_len(a):
-                w += a[r]
-                r += 1
-            return w
-    else:
+
+def ft_cut_between_char(d, b):
+    if ft_count_char_in_str(d, b) == 1:
+        return -1
+    elif ft_count_char_in_str(d, b) == 0:
         return -2
-    
+    return ft_slice_str(b, 0, ft_find_char(d, b) - 1) + \
+        ft_slice_str(b, ft_find_second_char(d, b) + 1, ft_len(b))
