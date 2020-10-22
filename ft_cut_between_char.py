@@ -1,44 +1,39 @@
-def ft_len(str):
-    l = 0
-    for i in str:
-        l += 1
-    return (l)
+def ft_len(a):
+    s = 0
+    for i in a:
+        s += 1
+    return (s)
 
 
-def ft_cut_between_char(char,str):
+def ft_cut_between_char(char, a):
     x = 0
     r = 0
-    w =''
+    w = ''
     count = 0
-    if char in str:
-        for i in str:
+    if char in a:
+        for i in a:
             if i == char:
-                count+=1
+                count += 1
 
         if count == 1:
             return -1
-
-
-
         else:
-            for i in range(ft_len(str)):
-                if str[i] == char:
+            for i in range(ft_len(a)):
+                if a[i] == char:
                     x = i
 
                     break
-            for i in range(ft_len(str)):
-                if str[i] == char:
+            for i in range(ft_len(a)):
+                if a[i] == char:
                     r = i
             for i in range(x):
-                w += str[i]
+                w += a[i]
 
-            r+=1
-            while r<ft_len(str):
-                w+= str[r]
-                r+=1
+            r += 1
+            while r < ft_len(a):
+                w += a[r]
+                r += 1
             return w
-
-
     else:
         return -2
-print(ft_cut_between_char('3','123456789034563434'))
+    
