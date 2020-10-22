@@ -1,34 +1,21 @@
 def ft_len(a):
-    b = 0
+    d = 0
     for i in a:
-        b += 1
-    return (b)
+        d += 1
+    return d
 
 
-def ft_find_second_char(char, a):
-    count = 0
-    x = 0
-    r = 0
-    if char in str:
-        for i in range(ft_len(a)):
-            if str[i] == char:
-                x = i
-
-                break
-
-        for i in a:
-            if i == char:
-                count += 1
-        if count == 1:
-            return -1
-        else:
-            for i in range(ft_len(a)):
-                if a[i] == char and i != x:
-                    r = i
-
-                    break
-
-            return r
-
-    else:
-        return -2
+def ft_change_place_word(a):
+    i = 0
+    s1 = ''
+    s2 = ''
+    s3 = ''
+    while a[i] != ' ':
+        s1 += a[i]
+        i += 1
+    i += 1
+    while i < ft_len(a):
+        s2 += a[i]
+        i += 1
+        s3 = s2 + ' ' + s1
+    return s3
